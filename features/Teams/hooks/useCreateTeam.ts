@@ -1,4 +1,5 @@
 import { v4 as uuidv4 } from "uuid";
+import toast from "react-hot-toast";
 
 import type { Team, TeamFormField } from "../../../types";
 import { createTeam } from "../../../api";
@@ -21,8 +22,7 @@ const useCreateTeam = ({
     );
 
     if (teamAlreadyExist) {
-      alert("Team name already exist");
-
+      toast("Team name already exist");
       return;
     }
 
@@ -31,7 +31,7 @@ const useCreateTeam = ({
     createTeam(newTeamWithId);
     setAllTeams((pre) => [...pre, newTeamWithId]);
 
-    alert("Team has been created successfully.");
+    toast("Team has been created successfully.");
     setDisplayCreateTeamForm(false);
   };
 

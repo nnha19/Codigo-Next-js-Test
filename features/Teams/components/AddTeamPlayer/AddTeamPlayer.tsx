@@ -1,5 +1,4 @@
-import { useEffect, useState } from "react";
-import InfiniteScroll from "react-infinite-scroll-component";
+import { toast } from "react-hot-toast";
 
 import { addNewPlayerToTeam } from "../../../../api";
 import Modal from "../../../../components/Modal";
@@ -32,7 +31,7 @@ const AddTeamPlayer = ({
       newPlayer
     );
     if (updatedTeams) setAllTeams(updatedTeams);
-    alert("Successfully added this player to the team");
+    toast("Successfully added this player to the team");
   };
 
   return (

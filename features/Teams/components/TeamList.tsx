@@ -1,5 +1,7 @@
 import { useState } from "react";
 
+import toast from "react-hot-toast";
+
 import { deleteTeam, editTeam } from "../../../api";
 import type { Team, TeamFormField } from "../../../types";
 import AddTeamPlayer from "./AddTeamPlayer/AddTeamPlayer";
@@ -30,7 +32,7 @@ const TeamList = ({ allTeams, setAllTeams }: IProps) => {
 
     const invalidTeamName = allTeams.some((t) => t.name === editedTeam.name);
     if (invalidTeamName) {
-      alert("Team name already exists");
+      toast("Team name already exists");
       return;
     }
 
@@ -40,7 +42,7 @@ const TeamList = ({ allTeams, setAllTeams }: IProps) => {
     );
     setAllTeams(updatedTeams);
     setEditTeamValue(undefined);
-    alert("Team has been upated successfully.");
+    toast("Team has been upated successfully.");
   };
 
   return (

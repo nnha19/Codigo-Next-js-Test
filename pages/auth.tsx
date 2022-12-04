@@ -1,6 +1,7 @@
 import { useState, FormEvent } from "react";
 
 import { useRouter } from "next/router";
+import toast from "react-hot-toast";
 
 import Button from "../components/Button";
 import Input from "../components/Input";
@@ -14,10 +15,11 @@ const AuthPage = () => {
   const handleLogin = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (value === "") {
-      alert("Username is required");
+      toast("Username is required");
       return;
     }
     setUserName(value);
+    toast("Login successful");
     router.push("/teams");
   };
 

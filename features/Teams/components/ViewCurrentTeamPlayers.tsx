@@ -1,3 +1,5 @@
+import { toast } from "react-hot-toast";
+
 import type { Team } from "../../../types";
 import Modal from "../../../components/Modal";
 import { removePlayer } from "../../../api";
@@ -21,7 +23,7 @@ const ViewCurrentTeamPlayers = ({
     const updatedTeams = removePlayer(selectedTeamToViewPlayers, id);
     if (updatedTeams) {
       setAllTeams(updatedTeams);
-      alert("Removed this player from team");
+      toast("Removed this player from team");
     }
   };
 
