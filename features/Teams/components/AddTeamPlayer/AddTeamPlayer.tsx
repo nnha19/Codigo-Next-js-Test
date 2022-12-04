@@ -67,7 +67,7 @@ const AddTeamPlayer = ({
           );
         })}
         {loading && <Spinner />}
-        <div className="my-4" ref={loader} />
+        <div className="h-4" ref={loader} />
       </Modal>
     </div>
   );
